@@ -1,0 +1,38 @@
+
+<ons-page style="background-color: #F7F7F7">
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="myNavigator.popPage()"><ons-icon icon="chevron-left"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="text-align: center">Settings</div>
+        </ons-toolbar>
+
+
+      <div class="settings-header">Themes</div>
+      
+      <ons-list modifier="inset" class="settings-list" style="margin-bottom:10px">
+
+        <ons-list-item modifier="tappable" ng-repeat="color in colors" ng-click="changeTo(color)">
+            <label class="radio-button radio-button--list-item">
+              <input type="radio" name="a" ng-checked="color.toLowerCase()==dynamic">
+              <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+              {{color}}
+            </label>
+         </ons-list-item>
+      </ons-list>
+        <div style="text-align: center">
+            <button ng-repeat="a in [1]" ng-class="dynamic" class="button" style="width:95%">
+                Example
+            </button>
+        </div>
+
+      <div class="settings-header">Other</div>
+
+      <ons-list modifier="inset" class="settings-list">
+        <ons-list-item>
+          Play Opening Sound
+          <ons-switch  var="openSwitch" ng-checked="{{openSound}}" modifier="list-item" ng-click="changeOpen(openSwitch)"></ons-switch>
+        </ons-list-item>
+      </ons-list>
+    
+    </ons-page>

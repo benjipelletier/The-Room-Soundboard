@@ -1,0 +1,55 @@
+<ons-navigator var="myNavigator">
+
+    <ons-page style="background-color: #F7F7F7">
+
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="text-align: center">Randomizer</div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })"><ons-icon icon="cog"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+            
+        <div style="text-align: center">
+    <h1>Randomizer</h1>
+    <h2 class="cheeky">"Randomly Generated Quotes"</h2>
+    
+    <hr class="lower">
+    
+    
+    
+    <button class="button" ng-class="dynamic" 
+            ng-click="playRandom(johnny)">
+            Random Johnny Quote
+    </button>
+    
+    <button class="button" ng-class="dynamic" 
+            ng-click="playRandom(lisa)">
+            Random Lisa Quote
+    </button>
+    
+    <button class="button" ng-class="dynamic" 
+            ng-click="playRandom(mark)">
+            Random Mark Quote
+    </button>
+    
+    <button class="button" ng-class="dynamic" 
+            ng-click="playRandom(denny)">
+            Random Denny Quote
+    </button>
+    
+    <button class="button" ng-class="dynamic" 
+            ng-click="playRandom(lisasmom)">
+            Random Claudette Quote
+    </button>
+    
+    <button class="button" ng-class="dynamic" 
+            ng-click="playRandom('random')">
+            Random Quote (all)
+    </button>
+    
+</ons-scroller>
+
+</ons-page>

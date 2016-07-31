@@ -1,0 +1,57 @@
+<ons-navigator var="myNavigator">
+
+    <ons-page style="background-color: #F7F7F7" ng-init="reloadStats()">
+
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="text-align: center">Home</div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })"><ons-icon icon="cog"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+            
+        <div style="text-align: center">
+            <img  src="images/title.png" style="width:95%; margin-top:10px"/>
+            
+                
+                <div class="shadow">
+                    <ons-row>
+                        <ons-col align="left"><h3>1. Turn up the volume</h3></ons-col>
+                        <ons-col align="right">
+                        <i class="fa fa-volume-up fa-5x"></i></ons-col>
+                    </ons-row>
+                    <hr class="style-two">
+                    <ons-row>
+                        <ons-col align="left"><h3>2. Swipe right to get started</h3></ons-col>
+                        <ons-col align="right">
+                        <i class="fa fa-long-arrow-right fa-5x"></i></ons-col>
+                    </ons-row>
+                    <div ng-hide="usersOnline == null">
+                        <hr class="style-two">
+                        <ons-row>
+                            <ons-col align="left"><h3><i>The Room</i> fans online:</h3></ons-col>
+                            <ons-col align="right">
+                            <h1 style="font-size:400%">{{usersOnline}}</h1>
+                        </ons-row>
+                    </div>
+                    <hr class="style-two">
+                    <h3> Total Sounds: {{totalSounds}}</h3>
+                </div>
+            <button class="button" ng-class="dynamic" onclick="openDeviceBrowser('http://en.wikipedia.org/wiki/The_Room_(film)')" class="button">
+                <i class="fa fa-info-circle fa-lg"></i> About "The Room" <i class="fa fa-info-circle fa-lg"></i>
+            </button>
+            <button class="button" ng-class="dynamic" onclick="openDeviceBrowser('http://www.theroommovie.com/buydirect.html')" class="button">
+                <i class="fa fa-dollar fa-lg"></i> The Room Apparel <i class="fa fa-dollar fa-lg"></i>
+            </button>
+            <p><i>© Wiseau-Films USA</i></p>
+        </div>
+        
+    </ons-page>
+
+</ons-navigator>
+
+
+
+

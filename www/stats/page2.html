@@ -1,0 +1,75 @@
+<ons-navigator var="myNavigator" >
+
+    <ons-page style="background-color: #F7F7F7">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()">
+                    <ons-icon icon="bars"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="text-align: center">
+                <div ng-show="totalGlobalPlays == 0">The Room: SB</div>
+                <div ng-hide="totalGlobalPlays == 0">{{totalGlobalPlays | number}} Plays</div>
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })">
+                    <ons-icon icon="cog"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <div style="text-align: center">
+
+            <h1>Global Stats</h1>
+            <h2 class="cheeky">"Plays Per Quote Globally"</h2>
+            <p style="font-size:125%">June 6, 2014 - {{currentDate | date:'MMM d, yyyy'}}</p>
+
+            <button ng-class="dynamic" class="button" ng-click="reloadStats()">
+                Fetch Stats <i class="fa fa-refresh"></i> Reload
+            </button>
+
+            </div>
+            <div class="spinner" ng-show="globalStatsLoad == true">
+                  <div class="rect1"></div>
+                  <div class="rect2"></div>
+                  <div class="rect3"></div>
+                  <div class="rect4"></div>
+                  <div class="rect5"></div>
+            </div>
+            <!--<div ng-show="globalStatsLoad == true">
+                <ons-icon class="load" icon="rotate-right" size="20px" spin="true"></ons-icon>
+            </div>-->
+            
+            <div class="globStats">
+                <div>
+                    <ons-list class="plan-list">
+                                              <ons-list-item class="plan" ng-repeat="item in globalStatistics" ng-class-odd="'odd'">
+                                                <ons-row>
+                                                <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:$index % 2 == 0 ? '#CD0000' : '#ccc'}">
+                                                  </ons-col>
+ 
+                                                  <ons-col class="plan-right">
+                                                    <div class="plan-name">{{item.quote}}</div>
+                                                  </ons-col>
+                                             
+                                                  <ons-col width="110px" class="plan-left">
+                                                    <div class="plan-date">{{item.plays | number}}</div>
+                                                  </ons-col>
+                                                  <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:$index % 2 == 0 ? '#CD0000' : '#ccc'}">
+                                                  </ons-col>
+                                                </ons-row>
+                                              </ons-list-item>
+                                    
+                                            </ons-list>
+                    <!--<hr ng-hide="item.quote == globalStatistics[0].quote" class="style-two">
+                    <h2 style="font-weight:normal; float:left">{{item.quote}}</h2>
+                    <span style="font-size:2em"><b>{{item.plays | number}}</b></span>-->
+                </div>
+            </div>
+
+        </div>
+
+    </ons-page>
+
+</ons-navigator>

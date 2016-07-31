@@ -1,0 +1,31 @@
+<ons-navigator var="myNavigator">
+
+    <ons-page style="background-color: #F7F7F7">
+
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="text-align: center">{{totalPlays | number}} Plays</div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })"><ons-icon icon="cog"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+                
+        <div style="text-align: center">
+         
+        <h1>Local Statistics</h1>
+        <h2 class="cheeky">"Plays Per Quote On Local Device"</h2>
+        
+        <hr class="lower">
+        
+            <div ng-repeat="item in stats">
+                <hr ng-hide="item.quote == stats[0].quote" class="style-two">
+                <h2 style="font-weight:normal;">{{item.quote}}</h2>
+                <span style="font-size:2em"><b>{{item.value | number}}</b></span>
+            </div>
+        </div>
+        
+</ons-page>
+
+</ons-navigator>

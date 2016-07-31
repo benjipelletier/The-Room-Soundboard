@@ -1,0 +1,109 @@
+<ons-navigator var="myNavigator">
+
+    <ons-page style="background-color: #F7F7F7">
+
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <input type="search" value="" ng-model="mi" placeholder="Search quotes" class="search-input">
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })"><ons-icon icon="cog"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>  
+    
+      <div style="text-align: center">
+       
+    <h1>Chicken Impressions</h1>
+    <hr class="lower">
+    
+    
+        <ons-gesture-detector ng-repeat="button in chicken | filter:mi" ng-hold="addToFav(button.quote, button.path)">
+            <button
+                ng-class="dynamic" 
+                class="button"
+                ng-click="play(button.path, button.quote)">
+                {{button.quote}}
+                <i ng-show="isFav(button.quote, button.path) == true"class="fa fa-star fa-lg star" style="color: #FFD700"></i>
+            </button>
+        </ons-gesture-detector>
+    
+    
+    <hr class="style-two">
+    
+    <h1>Chris R.</h1>
+    <h2 class="cheeky">"The guy in dress shoes, warm-up pants, and on PCP"</h2>
+    <hr class="lower">
+    
+    
+        <ons-gesture-detector ng-repeat="button in chris | filter:mi" ng-hold="addToFav(button.quote, button.path)">
+            <button
+                ng-class="dynamic" 
+                class="button"
+                ng-click="play(button.path, button.quote)">
+                {{button.quote}}
+                <i ng-show="isFav(button.quote, button.path) == true"class="fa fa-star fa-lg star" style="color: #FFD700"></i>
+            </button>
+        </ons-gesture-detector>
+
+    
+    <hr class="style-two">
+    
+    <h1>Flower Shop Lady</h1>
+    <h2 class="cheeky">"The Flower Shop Lady"</h2>
+    <hr class="lower">
+    
+    
+        <ons-gesture-detector ng-repeat="button in flower | filter:mi" ng-hold="addToFav(button.quote, button.path)">
+            <button
+                ng-class="dynamic" 
+                class="button"
+                ng-click="play(button.path, button.quote)">
+                {{button.quote}}
+                <i ng-show="isFav(button.quote, button.path) == true"class="fa fa-star fa-lg star" style="color: #FFD700"></i>
+            </button>
+        </ons-gesture-detector>
+    
+    
+    <hr class="style-two">
+    
+    <h1>Michelle's Boyfriend Mike</h1>
+    <h2 class="cheeky">"The Boyfriend of Michelle"</h2>
+    <hr class="lower">
+    
+    
+        <ons-gesture-detector ng-repeat="button in mike | filter:mi" ng-hold="addToFav(button.quote, button.path)">
+            <button
+                ng-class="dynamic" 
+                class="button"
+                ng-click="play(button.path, button.quote)">
+                {{button.quote}}
+                <i ng-show="isFav(button.quote, button.path) == true"class="fa fa-star fa-lg star" style="color: #FFD700"></i>
+            </button>
+        </ons-gesture-detector>
+
+    
+    <hr class="style-two">
+    
+    <h1>Steven</h1> 
+    <h2 class="cheeky">"The Unexplained Character"</h2>
+    <hr class="lower">
+    
+        <ons-gesture-detector ng-repeat="button in steven | filter:mi" ng-hold="addToFav(button.quote, button.path)">
+            <button
+                ng-class="dynamic" 
+                class="button"
+                ng-click="play(button.path, button.quote)">
+                {{button.quote}}
+                <i ng-show="isFav(button.quote, button.path) == true"class="fa fa-star fa-lg star" style="color: #FFD700"></i>
+            </button>
+        </ons-gesture-detector>
+    
+    
+    </div>
+
+</ons-page>
+
+</ons-navigator>

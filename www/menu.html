@@ -1,0 +1,103 @@
+
+<ons-page modifier="menu-page">
+    <ons-toolbar style="background-color:white; border:none">
+            <div class="left">
+
+            </div>
+            <div class="center" style="color: black">
+ 
+                The Room: SB
+            
+            </div>
+            <div class="right">
+  
+            </div>
+        </ons-toolbar>
+        
+        <ons-list class="menu-list">
+          <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('home/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-home"></ons-icon>
+            Home
+            <div ng-show="usersOnline > 1" class="notification menu-notification">{{usersOnline | number}}</div>
+          </ons-list-item>
+          
+          <h2 class="list__header">Characters</h2>
+
+          <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('johnny/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-spoon"></ons-icon>
+            Johnny
+          </ons-list-item>
+
+          <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('lisa/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-spoon"></ons-icon>
+            Lisa
+          </ons-list-item>
+    
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('mark/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-spoon"></ons-icon>
+            Mark
+          </ons-list-item>
+
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('denny/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-spoon"></ons-icon>
+            Denny
+          </ons-list-item>
+   
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('lisasmom/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-spoon"></ons-icon>
+            Lisa's Mom
+          </ons-list-item>
+ 
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('misc/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-spoon"></ons-icon>
+            Misc
+          </ons-list-item>
+    
+    
+
+        <h2 class="list__header">More Features</h2>
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('random/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-random"></ons-icon>
+            Randomizer
+          </ons-list-item>
+
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('fav/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-star"></ons-icon>
+            Favourites
+          </ons-list-item>
+
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('stats/page1.html', {closeMenu: true})">
+            <ons-icon icon="fa-bar-chart-o"></ons-icon>
+            Local Stats
+            <div class="notification menu-notification">{{totalPlays | number}}</div>
+          </ons-list-item>
+ 
+        
+        <ons-list-item class="menu-item" ng-click ="app.slidingMenu.setMainPage('stats/page2.html', {closeMenu: true})">
+            <ons-icon icon="fa-globe"></ons-icon>
+            Global Stats
+            <div class="notification menu-notification">{{totalGlobalPlays | number}}</div>
+          </ons-list-item>
+        </ons-list>
+        
+        <br>
+
+        <ons-list class="bottom-menu-list">
+          <ons-list-item class="bottom-menu-item" ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' }); app.slidingMenu.close()">
+            Settings
+          </ons-list-item>
+
+          <ons-list-item class="bottom-menu-item" onclick="openDeviceBrowser('http://www.benjipelletier.me')">
+                Developer
+          </ons-list-item>
+
+        </ons-list>
+
+      </ons-page>

@@ -1,0 +1,25 @@
+{
+    "framework_version": "3.5",
+    "plugins": [
+        "mobi.monaca.plugins.IOSStatusBar",
+        "mobi.monaca.plugins.Monaca",
+        "org.apache.cordova.splashscreen",
+        "org.apache.cordova.media",
+        "org.apache.cordova.vibration",
+        "org.apache.cordova.statusbar"
+    ],
+    "title-ja": "",
+    "title-en": "The Room: Soundboard",
+    "description-ja": "",
+    "description-en": "",
+    "category": "User Template",
+    "platform": [
+        "android",
+        "ios"
+    ],
+    "name": "generated-1469940236-52e5096d7e21930e3addd408",
+    "xcode_version": "5",
+    "cordova_version": "4.1",
+    "external_plugins": [],
+    "plugin_settings": []
+}

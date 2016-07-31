@@ -1,0 +1,41 @@
+<ons-navigator var="myNavigator">
+
+    <ons-page style="background-color: #F7F7F7">
+
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <input type="search" value="" ng-model="l" placeholder="Search quotes" class="search-input">
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })"><ons-icon icon="cog"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>       
+        
+    <div style="text-align: center">
+        
+    <h1>Lisa</h1>
+    <h2 class="cheeky">"The Beautiful Lady"</h2>
+    
+    <hr class="lower">
+    
+    
+        <ons-gesture-detector ng-repeat="button in lisa | filter:l" ng-hold="addToFav(button.quote, button.path)">
+            <button
+                ng-class="dynamic" 
+                class="button"
+                ng-click="play(button.path, button.quote)">
+                {{button.quote}}
+                <i ng-show="isFav(button.quote, button.path) == true"class="fa fa-star fa-lg star" style="color: #FFD700"></i>
+            </button>
+        </ons-gesture-detector>
+    
+    
+    </div>
+
+
+</ons-page>
+
+</ons-navigator>

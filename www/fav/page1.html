@@ -1,0 +1,51 @@
+<ons-navigator var="myNavigator">
+
+    <ons-page style="background-color: #F7F7F7">
+
+        <ons-toolbar >
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <input type="search" value="" ng-model="f" placeholder="Search quotes" class="search-input">
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('home/page2.html', { animation: 'slide' })"><ons-icon icon="cog"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>  
+        
+        <div style="text-align: center">
+            <h1>Favourites</h1>
+            <h2 class="cheeky">"Your All Time Favourite Quotes"</h2>
+            
+            <hr class="lower">
+        
+            <div ng-repeat="button in fav | filter:f" >
+                    <button
+                        class="button yellow"
+                        ng-click="play(button.path, button.quote)">
+                        {{button.quote}}
+                    </button>
+                    <i>{{button.list}}</i>
+            </div>
+        
+        
+        <div ng-hide="fav.length > 0">
+            <p style="font-size:125%">
+                Tip: <i>hold a character's quote to add it here!</i>
+            </p>
+        </div>
+        
+        <div ng-show="fav.length > 0">
+            <p style="font-size:125%">
+                Tip: <i>On the character's page, hold the button to remove it from favourties!</i>
+            </p>
+        </div>
+        
+        </div>
+
+
+    </ons-page>
+
+</ons-navigator>
+    
